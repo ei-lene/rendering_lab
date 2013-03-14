@@ -16,4 +16,8 @@ class HorsesController < ApplicationController
       format.html { render action: "new" }
     end
   end
+
+  def index
+    @horses = Horse.all  
+  end
 end

@@ -1,16 +1,7 @@
 <%= form_for(@horse) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :position %><br />
-    <%= f.number_field :position %>
-  </div>
+
+  <%= render :partial => "fields", :locals => { :f => f} %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

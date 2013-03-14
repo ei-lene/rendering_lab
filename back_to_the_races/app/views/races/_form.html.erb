@@ -15,36 +15,18 @@
     <legend>Horse</legend>
 
     <%= f.fields_for :horses do |h| %>
-      <div class="field">
-        <%= h.label :name %><br />
-        <%= h.text_field :name %>
-      </div>
-      <div class="field">
-        <%= h.label :number %><br />
-        <%= h.number_field :number %>
-      </div>
-      <div class="field">
-        <%= h.label :position %><br />
-        <%= h.number_field :position %>
-      </div>
+ 
+      <%= render :partial => "horses/fields", :locals => { :f => h} %>
+
     <% end %>
   </fieldset>
 
   <fieldset>
     <legend>Jockey</legend>
     <%= f.fields_for :jockeys do |j| %>
-      <div class="field">
-        <%= j.label :name %><br />
-        <%= j.text_field :name %>
-      </div>
-      <div class="field">
-        <%= j.label :height %><br />
-        <%= j.text_field :height %>
-      </div>
-      <div class="field">
-        <%= j.label :shoe_size %><br />
-        <%= j.number_field :shoe_size %>
-      </div>
+
+    <%= render :partial => "jockeys/fields", :locals => { :f => j } %>
+
     <% end %>
   </fieldset>
 

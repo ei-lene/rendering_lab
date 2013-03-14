@@ -11,11 +11,15 @@ class RacesController < ApplicationController
 
   def create
     @race = Race.new(params[:race])
-
     if @race.save
       redirect_to @race, notice: 'Race was successfully created.'
     else
       render action: "new"
     end
   end
+
+  def index
+    @races = Race.all
+  end
+
 end

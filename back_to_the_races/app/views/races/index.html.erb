@@ -1,0 +1,18 @@
+<h1>All races</h1>
+
+<% @races.each do |race| %>
+  <h3><%= race.name %></h3>
+  <h4> - horses </h4>
+  <ul>
+    <li>
+      <%= render :partial => "horses/horse_li", :collection => race.horses, :as => :horse%>
+    </li>
+  </ul>
+  <h4> - jockeys </h4>
+  <ul>
+    <li>
+      <%= render :partial => "jockeys/jockey_li", :collection => race.jockeys, :as => :jockey%>
+    </li>
+  </ul>
+
+<% end %>
